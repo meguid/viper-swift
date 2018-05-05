@@ -1,3 +1,7 @@
+//
+// Created by meguid/viper-swift
+//
+
 import UIKit
 
 protocol MODULEViewProtocol: class {
@@ -8,6 +12,8 @@ protocol MODULEViewProtocol: class {
 protocol MODULEInteractorProtocol: class {
     
     var presenter: MODULEPresenterProtocol? { get set }
+    var dataStore: MODULEDataStoreProtocol? { get set }
+
 }
 
 protocol MODULEPresenterProtocol: class {
@@ -18,23 +24,12 @@ protocol MODULEPresenterProtocol: class {
     
 }
 
-protocol MODULEItemViewProtocol: class {
-
-}
-
 protocol MODULERouterProtocol: class {
     
+    static func createMODULEModule() -> MODULEView
+
 }
 
-func updateMODULEProtocols(view : MODULEView) {
+protocol MODULEDataStoreProtocol: class {
     
-    let interactor: MODULEInteractorProtocol = MODULEInteractor()
-    let presenter: MODULEPresenterProtocol = MODULEPresenter()
-    let router: MODULERouterProtocol = MODULERouter()
-    
-    view.presenter = presenter
-    presenter.view = view
-    presenter.router = router
-    presenter.interactor = interactor
-    interactor.presenter = presenter
 }

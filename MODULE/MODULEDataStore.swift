@@ -4,6 +4,6 @@
 
 import Foundation
 
-class MODULEEntity {
+class MODULEDataStore : MODULEDataStoreProtocol {
     
 }
