@@ -12,7 +12,6 @@ def createDirectory(folder) :
     if not os.path.exists(module_directory):
         os.makedirs(module_directory)
 
-
 files = ["View", "Interactor", "Presenter", "Entity", "Router", "DataStore", "Protocols"]
 script_dir = os.path.dirname(__file__)
 module = raw_input()
